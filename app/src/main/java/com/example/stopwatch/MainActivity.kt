@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
             val h = time /3600
             val m = time % 3600 / 60
             val s = time % 60
-            "%1$02d:%2&02d:%3$02d".format(h, m, s)
+            "%1$02d:%2$02d:%3$02d".format(h, m, s)
         }
     }
 }
