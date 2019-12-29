@@ -35,6 +35,26 @@ class MainActivity : AppCompatActivity() {
                 handler.postDelayed(this, 1000)
             }
         }
+
+        // start
+        startButton.setOnClickListener {
+            handler.post(runnable)
+        }
+
+        // stop
+        stopButton.setOnClickListener {
+            handler.removeCallbacks(runnable)
+        }
+
+        // reset
+        resetButton.setOnClickListener {
+            handler.removeCallbacks(runnable)
+            timeValue = 0
+            // timeToTextの引数はデフォルト値が設定されているので、引数省略できる
+            timeToText()?.let {
+                timeText.text = it
+            }
+        }
     }
 
     // 数値を00:00:00形式の文字列に変換する関数
